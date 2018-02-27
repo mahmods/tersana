@@ -1,0 +1,85 @@
+<?php
+return [
+    //General
+    'number'=>'الرقم',
+    'name'=>'الأسم',
+    'email'=>'البريد الألكترونى',
+    'password'=>'الرقم السرى',
+    'phone'=>'رقم التليفون',
+    'image'=>'الصورة',
+    'logo'=>'اللوجو',
+    'description'=>'الوصف',
+    'externalLink'=>'لينك خارجى',
+    'activation'=>'التفعيل',
+    'active'=>'مُفعل',
+    'other'=>'تفاصيل اخرى',
+    'action'=>'الأمر',
+    'add'=>'إضافة',
+    'update'=>'تعديل',
+    'delete'=>'حذف',
+    'confirmDelete'=>'هل أنت  متأكد من  هذا الحذف',
+    'cancel'=>'إلغاء',
+    'save'=>'حفظ',
+    'messages'=>'الرسائل',
+    //Users
+    'users'=>'الأعضاء',
+    'addUser'=>'إضافة عضو جديد',
+    'updateUser'=>'تعديل العض ',
+    'deleteUser'=>'حذف العضو',
+    'allUsers'=>'كل الأعضاء',
+    //Pages
+    'pages'=>'الصفحات',
+    'addPage'=>'إضافة صفحة جديدة',
+    'updatePage'=>'تعديل الصفحة',
+    'deletePage'=>'حذف الصفحة',
+    'pageName'=>'اسم الصفحة',
+    'pageTitle'=>'عنوان الصفحة',
+    'pageDescription'=>'وصف الصفحة',
+    //Services
+    'services'=>'الخدمات',
+    'servicesSections'=>'أقسام الخدمات',
+    'addService'=>'إضافة خدمة جديدة',
+    'updateService'=>'تعديل الخدمة',
+    'deleteService'=>'خذف الخدمة',
+    'allServices'=>'كل الخدمات',
+    'serviceName'=>'اسم الخدمة',
+    'serviceDescription'=>'وصف الخدمة',
+    //Sections
+    'addSection'=>'أضف قسم',
+    'allSections'=>'كل الأقسام',
+    'updateSection'=>'تعديل القسم',
+    'deleteSection'=>'حذف القسم',
+    'allSection'=>'كل الأقسام',
+    'sectionName'=>'اسم القسم',
+    'sectionDescription'=>'وصف القسم',
+    //Clients
+    'clients'=>'العملاء',
+    'clientName'=>'اسم العميل',
+    'addClient'=>'إضافة عميل جديد',
+    'updateClient'=>'تعديل العميل',
+    'deleteClient'=>'حذف العميل',
+    'allClients'=>'كل العملاء',
+    //blog
+    'blogs'=>' المدونات',
+    'blog_categories'=>'فئات المدونات',
+    'all_blogs'=>'كل المدونات',
+    'all_blog_categories'=>'كل فئات المدونات',
+    'add_blog'=>'إضافة مدونة',
+    'add_blog_category'=>'إضافة فئة للمدونة',
+    //Sliders
+    'sliders'=>' الاسليدرز',
+    'all_sliders'=>'كل الاسليدرز',
+    'add_slider'=>'إضافة اسليدر',
+    //Links
+    'links'=>'الروابط',
+    'all_links'=>'كل الروابط',
+    'add_link'=>'إضافة رابط',
+    //contacts
+    'contacts'=>'رسائل الأعضاء',    
+    'all_contacts'=>'كل الرسائل',
+    //Settings
+    'settings'=>'الإعدادات الرئيسية',
+    'all_settings'=>'كل الإعدادات الرئيسية',    
+
+
+];
