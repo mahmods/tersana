@@ -1,31 +1,35 @@
 <?php
 require 'define.php';
-//Route::get('/',function(){ return view('welcome');})->name('getBackendHome');
+
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
-Auth::routes();
 Route::get('/403',function(){ return view('errors.403');})->name('unauthorised');
 Route::group(['middleware'=>['guest']],function(){
     //site routes   
 });
 Route::get('/',['uses'=>'HomeController@index','as'=>'getFrontHome']);
-    Route::get('/slider/{sliderId}/{sliderName}',['uses'=>'SliderController@show','as'=>'getFrontSliderById']);
-    Route::get('/services',['uses'=>'ServiceController@indexFront','as'=>'getFrontServices']);
-    Route::get('/service/{serviceId}/{serviceName}',['uses'=>'ServiceController@show','as'=>'getFrontServiceById']);
-    Route::match(['get','post'],'/search',['uses'=>'ServiceController@searchByKeyword','as'=>'getKeyword']);
-    Route::get('/clients',['uses'=>'ClientController@indexFront','as'=>'getFrontClients']);
-    Route::get('/photos',['uses'=>'PhotoController@indexFront','as'=>'getFrontPhotos']);
-    Route::get('/blog',['uses'=>'BlogController@indexFront','as'=>'getFrontBlog']);
-    Route::get('/blog/{blogId}',['uses'=>'BlogController@show','as'=>'getFrontBlogById']);
+Route::get('/slider/{sliderId}/{sliderName}',['uses'=>'SliderController@show','as'=>'getFrontSliderById']);
+Route::get('/services',['uses'=>'ServiceController@indexFront','as'=>'getFrontServices']);
+Route::get('/service/{serviceId}/{serviceName}',['uses'=>'ServiceController@show','as'=>'getFrontServiceById']);
+Route::match(['get','post'],'/search',['uses'=>'ServiceController@searchByKeyword','as'=>'getKeyword']);
+Route::get('/clients',['uses'=>'ClientController@indexFront','as'=>'getFrontClients']);
+Route::get('/photos',['uses'=>'PhotoController@indexFront','as'=>'getFrontPhotos']);
+Route::get('/blog',['uses'=>'BlogController@indexFront','as'=>'getFrontBlog']);
+Route::get('/blog/{blogId}',['uses'=>'BlogController@show','as'=>'getFrontBlogById']);
 
-    Route::get('/blog-by-categoyry-id/{categoryId}/{categoryName}',['uses'=>'BlogController@indexFrontByCategoryId','as'=>'getFrontBlogByCategoryId']);
+Route::get('/blog-by-categoyry-id/{categoryId}/{categoryName}',['uses'=>'BlogController@indexFrontByCategoryId','as'=>'getFrontBlogByCategoryId']);
 
-    Route::get('/page/{pageId}/{title}',['uses'=>'PageController@show','as'=>'getFrontPageById']);
-    Route::get('/contactus',['uses'=>'ContactController@indexFront','as'=>'getContacts']);
-    Route::post('/contactus',['uses'=>'ContactController@store','as'=>'postAddContact']);
+Route::get('/page/{pageId}/{title}',['uses'=>'PageController@show','as'=>'getFrontPageById']);
+Route::get('/contactus',['uses'=>'ContactController@indexFront','as'=>'getContacts']);
+Route::post('/contactus',['uses'=>'ContactController@store','as'=>'postAddContact']);
 
-Route::group(['middleware'=>['auth','access','laguageChooser']],function ()
+Route::group(['prefix' => 'admin'],function ()
 {
-    Route::get('/home',function(){ return view('backend.layouts.statistics_layout');})->name('getBackendHome');
+    Auth::routes();
+});
+
+Route::group(['prefix' => 'admin', 'middleware'=>['auth','access','laguageChooser']],function ()
+{
+    Route::get('/',function(){ return view('backend.layouts.statistics_layout');})->name('getBackendHome');
     Route::group(['prefix'=>'backend-users'],function (){
         //Users
         Route::get('/',['uses'=>'UserController@index','as'=>'getAllUsers']);
